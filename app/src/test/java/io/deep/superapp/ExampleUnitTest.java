@@ -1,4 +1,4 @@
-package com.deep.superapp;
+package io.deep.superapp;
 
 import org.junit.Test;
 

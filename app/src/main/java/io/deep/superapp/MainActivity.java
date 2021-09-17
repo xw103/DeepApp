@@ -1,32 +1,21 @@
-package com.deep.superapp;
+package io.deep.superapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.AlertDialog;
-import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
-import android.os.Process;
 import android.os.RemoteException;
 import android.util.Log;
-import android.view.WindowManager;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.deep.superapp.test.Main1;
-import com.deep.superapp.test.Main2;
+import com.deep.superapp.R;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import io.deep.superapp.test.Main1;
+import io.deep.superapp.test.Main2;
 
-import io.sapp.core.internal.IPCManager;
 import io.sapp.core.internal.IPCServer;
-import io.sapp.core.internal.RootIPCReceiver;
-import io.sapp.core.internal.RootServer;
-import io.sapp.core.utils.Shell;
 
 public class MainActivity extends AppCompatActivity {
 

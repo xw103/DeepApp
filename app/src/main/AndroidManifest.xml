@@ -10,7 +10,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true">
 
-        <activity android:name=".MainActivity"
+        <activity android:name="io.deep.superapp.MainActivity"
             android:taskAffinity="com.deep.superapp">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
