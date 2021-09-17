@@ -118,8 +118,6 @@ public class MainActivity extends AppCompatActivity {
                         dialog1.dismiss();
                     });
                     AlertDialog d = builder1.create();
-                    int type = WindowManager.LayoutParams.TYPE_APPLICATION_OVERLAY;
-                    d.getWindow().setType(type);
                     d.show();
                 });
             }
@@ -153,8 +151,6 @@ public class MainActivity extends AppCompatActivity {
                         dialog1.dismiss();
                     });
                     AlertDialog d = builder1.create();
-                    int type = WindowManager.LayoutParams.TYPE_APPLICATION_OVERLAY;
-                    d.getWindow().setType(type);
                     d.show();
                 });
             }
