@@ -13,8 +13,9 @@ public class Main1 extends IPCMain {
 
     @Override
     public void main(String sourcePath, String[] args) {
+        Log.e("args_apkPath",sourcePath);
         for (int i = 0; i < args.length; i++) {
-            Log.e(String.format("(%s):args[%d]",sourcePath, i), args[i]);
+            Log.e(String.format("args[%d]", i), args[i]);
         }
     }
 

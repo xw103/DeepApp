@@ -22,6 +22,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import io.sapp.core.internal.IPCManager;
 import io.sapp.core.internal.IPCServer;
 import io.sapp.core.internal.RootIPCReceiver;
 import io.sapp.core.internal.RootServer;
@@ -101,7 +102,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         TextView tv = findViewById(R.id.text1);
         tv.setText(getPackageCodePath());
-        new IPCServer<ITest1>(this){
+        new IPCServer<ITest1>(this) {
             @Override
             public void onConnect(ITest1 ipc) {
                 new Handler(Looper.getMainLooper()).post(() -> {
@@ -133,10 +134,10 @@ public class MainActivity extends AppCompatActivity {
                 Log.e("shell:[su]", line);
             }
         }.setMainClass(Main1.class)
-        .setParam(new String[]{"测试","666","888","999"})
-        .start();
+                .setParam(new String[]{"测试", "666", "888", "999"})
+                .start();
 
-        new IPCServer<ITest2>(this){
+        new IPCServer<ITest2>(this) {
             @Override
             public void onConnect(ITest2 ipc) {
                 new Handler(Looper.getMainLooper()).post(() -> {
@@ -168,7 +169,7 @@ public class MainActivity extends AppCompatActivity {
                 Log.e("shell:[su]", line);
             }
         }.setMainClass(Main2.class)
-                .setParam(new String[]{"测试2","666","888","999","222"})
+                .setParam(new String[]{"测试2", "666", "888", "999", "222"})
                 .start();
     }
 

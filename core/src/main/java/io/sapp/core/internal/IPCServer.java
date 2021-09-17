@@ -3,6 +3,10 @@ package io.sapp.core.internal;
 import android.content.Context;
 import android.util.Log;
 
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+import java.lang.reflect.ParameterizedType;
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -123,6 +127,19 @@ public abstract class IPCServer<T> extends RootIPCReceiver<T> {
             processName = "root";
         }
         createProcess(apkPath,packageName,mainClass,param,processName);
+        try {
+            Method m = IPCManager.class.getDeclaredMethod("addIPCReceiver",Class.class,RootIPCReceiver.class);
+            m.setAccessible(true);
+            Type superClass = getClass().getGenericSuperclass();
+            Type tType = ((ParameterizedType)superClass).getActualTypeArguments()[0];
+            m.invoke(null,(Class<T>)tType,this);
+        } catch (NoSuchMethodException e) {
+            e.printStackTrace();
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        } catch (InvocationTargetException e) {
+            e.printStackTrace();
+        }
         code++;
     }
 }
