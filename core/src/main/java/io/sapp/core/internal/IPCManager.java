@@ -13,7 +13,6 @@ public class IPCManager {
     }
 
     private static void addIPCReceiver(Class<?> clz,RootIPCReceiver ipcReceiver){
-//        Log.e("args:clz.getName()",clz.getName());
         ipcs.put(clz.getName(),ipcReceiver);
     }
 }
