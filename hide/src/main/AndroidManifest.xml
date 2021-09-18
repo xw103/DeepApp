@@ -2,4 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="io.app.hide">
 
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+
+    <application>
+        <activity android:name="io.app.hide.activity.InstallActivity" />
+    </application>
 </manifest>

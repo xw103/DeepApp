@@ -1,5 +1,5 @@
 // ITest1.aidl
-package com.deep.superapp;
+package io.deep.superapp;
 
 // Declare any non-default types here with import statements
 
